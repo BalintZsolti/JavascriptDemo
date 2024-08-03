@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termékmegjelenítő</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body onload="initializeGallery()">
+    <header>
+        <i class="material-icons menu-icon">menu</i>
+        <div class="header-right">
+            <i class="material-icons">location_on</i> New York
+            <div class="cart-icon">
+                <i class="material-icons">shopping_cart</i>
+                <span class="cart-badge">2</span>
+            </div>
+            <i class="material-icons">favorite</i>
+            <i class="material-icons">person</i> Enetix Demo
+            <i class="material-icons">arrow_drop_down</i>
+        </div>
+    </header>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li><i class="material-icons">dashboard</i> Dashboard</li>
+                <li><i class="material-icons">local_offer</i> New Sale</li>
+                <li><i class="material-icons">list</i> Catalog</li>
+                <li><i class="material-icons">shopping_cart</i> Orders</li>
+                <li><i class="material-icons">payment</i> Payments</li>
+                <li><i class="material-icons">paid</i> Customer credits</li>
+                <li><i class="material-icons">app_registration</i> Register</li>
+                <li><i class="material-icons">report</i> Reports</li>
+                <li><i class="material-icons">settings</i> Configuration
+                    <i class="material-icons arrow-down">arrow_drop_down</i></li>
+                <li><i class="material-icons">web</i> CMS
+                    <i class="material-icons arrow-down">arrow_drop_down</i></li>
+            </ul>
+        </div>
+        
+        
+        <div class="content">
+            <div class="image-gallery">
+                <div style="position: absolute; top: 5%; left: 17%;">
+                    <div style="font-size: 12px; color: grey; margin-top:6px">Catalog>MILLENIUM>RINGS>SOLITAIRE</div>
+                    <div style="font-size: 24px; font-weight: bold; margin-top:10px">Web POS Ring</div>
+                    <div style="font-size: 14px; margin-top:8px">THISISWP2022</div>
+                </div>
+                <img id="mainImage" src="img/ring1.jpg" alt="Termék kép">
+                <div class="thumbnail-gallery">
+                    <img src="img/ring1.jpg" alt="Kép 1" onclick="changeImage(this.src)">
+                    <img src="img/ring2.jpg" alt="Kép 2" onclick="changeImage(this.src)">
+                    <img src="img/ring3.jpg" alt="Kép 3" onclick="changeImage(this.src)">
+                    <img src="img/ring4.jpg" alt="Kép 4" onclick="changeImage(this.src)">
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <div class="button-container">
+                <button class="round-button">*463 JAR/NEDD-COPY</button>
+                <button class="round-button"
+                onmouseover="this.style.backgroundColor='grey';"
+                onmouseout="this.style.backgroundColor='rgb(28, 29, 31)';" 
+                 style="background-color: rgb(28, 29, 31);">ADD NEW CUSTOMER</button>
+                <button class="round-button">SELECT CUSTOMER</button>
+            </div>
+        
+            <div class="section-header">Item main info</div>
+            <div class="info-content">
+                <div class="vertical-line"></div>
+                <div class="info-item">
+                    <div class="info-header">Item Name:</div>
+                    <div class="info-details">Web POS Ring</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-header">SKU#:</div>
+                    <div class="info-details">WEBPOSRING</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-header">Item SKU:</div>
+                    <div class="info-details">THISISWP2022</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-header">Available Quantity:</div>
+                    <div class="info-details">5405</div>
+                </div>
+            </div>
+        
+            <div class="section-header">Attributes</div>
+            <div class="info-content">
+                <div class="info-item">
+                    <div class="info-header">Ring Size:</div>
+                    <div class="info-details">5 in</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-header">Cut:</div>
+                    <div class="info-details">Princess</div>
+                </div>
+            </div>
+        
+            <div style="margin-top: 10px;">Additional Notes</div>
+            <textarea id="additionalNotes" style="height: 100px;"></textarea>
+        
+            <div class="price-quantity">
+                <div class="price">
+                    <div class="price-label">Price</div>
+                    <div class="price-value">
+                        <span class="currency">$</span>
+                        <span id="price" data-price="25">25</span>
+                    </div>
+                </div>
+                <div class="quantity-section">
+                    <div class="quantity-label">Quantity</div>
+                    <div class="quantity-controls">
+                        <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantity" value="1" min="1" onchange="updateTotalPrice()">
+                        <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+            </div>                      
+        
+            <div class="buttons">
+                <button>Add to Cart</button>
+                <button onmouseover="this.style.backgroundColor='grey';"
+                onmouseout="this.style.backgroundColor='rgb(28, 29, 31)';"
+                 style="background-color: rgb(28, 29, 31);">Add to Wishlist</button>
+                <button onmouseover="this.style.backgroundColor='grey';"
+                onmouseout="this.style.backgroundColor='rgb(28, 29, 31)';" 
+                style="background-color: rgb(28, 29, 31);">Back</button>
+            </div>
+        </div>          
+    </div>
+</body>
+</html>
